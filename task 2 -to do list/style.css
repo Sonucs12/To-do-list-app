@@ -1,0 +1,256 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(150deg, #153779, #4e085f);
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    margin-top: 40px;
+    height: 40vh;
+    width: 100vh;
+    border-radius: 10px 10px 0px 0px;
+    padding: 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.heading i {
+    font-size: 25px;
+}
+
+.heading h1 {
+    font-size: 25px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1px;
+    border-radius: 20px;
+    margin-top: 30px;
+  
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+    outline: none;
+    background: white;
+    text-transform: capitalize;
+    border: 1px solid gray;
+    box-sizing: border-box;  width: 100%;
+}
+
+button {
+    padding: 10px;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+    outline: none;
+    background: purple;
+    color: white;
+    font-weight: 700;
+    width: 100px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orangered;
+}
+
+.task-box {
+    display: flex;
+    transition: height 0.5s;
+
+    width: 100vh;
+    flex-wrap: wrap;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px;
+
+    flex-direction: column;
+    background-color: aliceblue;
+}
+
+#list-container {
+
+    list-style: none;
+    font-size: small;
+}
+
+ul li {
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    margin: 0 0 5px;
+
+    background-color: #e0e0e0;
+    user-select: none;
+    padding: 4px 0px 4px 35px;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.7rem;
+
+    text-transform: capitalize;
+    animation: slidein 1s ease forwards;
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateY(-100%);
+    }
+}
+
+.list {
+    color: grey;
+}
+
+ul li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-image: url("icons8-circle-64.png");
+    background-size: cover;
+    background-position: center;
+    left: 8px;
+    top: 5px;
+}
+
+ul li.checked {
+    text-decoration: strickthrow;
+    color: gray;
+}
+
+ul li.checked::before {
+    background-image: url("icons8-checked-48.png");
+}
+
+.delete-btn {
+    position: absolute;
+    right: 0px;
+    line-height: 30px;
+    text-align: center;
+
+    cursor: pointer;
+    color: palevioletred;
+    font-size: 1.2rem;
+    height: 30px;
+    width: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-transition {
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.delete-transition.deleted {
+    opacity: 0;
+    transform: scaleY(0);
+}
+
+.delete-btn:hover {
+    color: white;
+    border-radius: 50%;
+    background-color: red;
+}
+
+footer {
+    background-color: black;
+    color: gray;
+    padding: 10px;
+    text-align: center;
+    font-size: small;
+}
+
+
+footer i {
+    margin: 20px 0px 0px 10px;
+    font-size: 2rem;
+}
+
+i:hover {
+    color: beige;
+}
+
+/* Media query for responsiveness at 321px */
+@media screen and (max-width: 321px) {
+    .main-box {
+        height: 30vh;
+        width: 60vh;
+        margin-top: 20px;
+        margin: 50px 40px 0px 40px;
+    }
+
+    .task-box {
+        justify-content: center;
+        margin: 0px 40px 0px 40px;
+        width: 60vh;
+    }
+}
+
+/* Media query for responsiveness at 377px */
+@media screen and (max-width: 376px) and (min-width: 322px) {
+    .main-box {
+        height: 30vh;
+        width: 70vh;
+        margin-top: 20px;
+        margin: 50px 40px 0px 40px;
+    }
+
+    .task-box {
+        justify-content: center;
+        margin: 0px 40px 0px 40px;
+        width: 70vh;
+    }
+}
+
+/* Media query for responsiveness at 425px */
+@media screen and (max-width: 425px) and (min-width: 378px) {
+    .main-box {
+        height: 30vh;
+        width: 80vh;
+        margin-top: 20px;
+        margin: 50px 40px 0px 40px;
+    }
+
+    .task-box {
+        margin: 0px 40px 0px 40px;
+        width: 80vh;
+    }
+}
+
+/* Media query for responsiveness at 426px */
+@media screen and (max-width: 426px) {
+    .main-box {
+        height: 30vh;
+        width: 45vh;
+    }
+
+    .task-box {
+        justify-content: center;
+        margin: 0px 40px 0px 40px;
+        width: 45vh;
+    }
+}
